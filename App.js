@@ -1,10 +1,13 @@
+import React from 'react';
+import ReactDOM from'react-dom/client';
+
 const heading1 = React.createElement(
     "h1",
     {
       id: "heading1",
       key: "heading1",
     },
-    "Heading1"
+    "I'm Having Fun Haha"
   );
 
   const heading2 = React.createElement(

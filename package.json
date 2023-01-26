@@ -1,0 +1,29 @@
+{
+  "name": "reactivity",
+  "version": "1.0.0",
+  "description": "My starter project to master React!",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/karticalm/REACTivity.git"
+  },
+  "author": "Kartik Pardhi",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/karticalm/REACTivity/issues"
+  },
+  "homepage": "https://github.com/karticalm/REACTivity#readme",
+  "devDependencies": {
+    "parcel": "^2.8.3",
+    "process": "^0.11.10"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "browserslist": [
+    "last 2 versions"
+  ]
+}
