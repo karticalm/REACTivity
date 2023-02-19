@@ -24,13 +24,23 @@
 }
 
 .restrocard {
-    width: 200px;
+    justify-content: space-between;
+    width: 17%;
     border: 1px solid black;
     padding: 10px;
     margin: 10px;
 }
 
-.restrocard > img {
+.shimmer {
+    justify-content: space-between;
+    width: 17%;
+    height: 400px;
+    padding: 10px;
+    margin: 10px;
+    background-color: lightgray;
+}
+
+.card-image {
     width: 100%;
 }
 
@@ -54,4 +64,8 @@
     height: 25px;
     width: 250px;
     font-size: medium;
+}
+
+.menu {
+    display: flex;
 }
