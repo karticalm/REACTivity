@@ -1,7 +1,8 @@
 import { useState, useEffect } from "react";
-import { RESTRO_URL } from "../../constants";
+import { RESTRO_URL } from "../utils/constants";
 import RestroCard from "./RestroCard";
 import Shimmer from "./Shimmer";
+import OneContext from "../Utils/Contexts/OneContext";
 
 const searchRestaurants = function (searchText, restaurants) {
   const filteredRestros = restaurants.filter((restaurant) =>
@@ -28,11 +29,11 @@ const Body = () => {
 
   return filteredRestaurants.length === 0 ? (
     <>
-      <div className="Search">
+      <div className="bg-green-400">
         <input
           type="text"
           placeholder=" Search"
-          className="Searchbox"
+          className="p-2 m-2 rounded-md"
           value={searchText}
           onChange={(e) => {
             setSearchText(e.target.value);
@@ -40,7 +41,8 @@ const Body = () => {
         ></input>
         <input
           type="submit"
-          className="SubmitButton"
+          value="Go"
+          className=" p-2 m-2 bg-white rounded-md"
           onClick={() => {
             const data = searchRestaurants(searchText, allRestaurants);
             setFilteredRestaurants(data);
@@ -50,12 +52,12 @@ const Body = () => {
       <Shimmer />
     </>
   ) : (
-    <>
-      <div className="Search">
+    <OneContext.Provider value={{ message: "Swiggy One" }}>
+      <div className="bg-green-400">
         <input
           type="text"
           placeholder=" Search"
-          className="Searchbox"
+          className="p-2 m-2 rounded-md"
           value={searchText}
           onChange={(e) => {
             setSearchText(e.target.value);
@@ -63,21 +65,22 @@ const Body = () => {
         ></input>
         <input
           type="submit"
-          className="SubmitButton"
+          value="Go"
+          className=" p-2 m-2 bg-white rounded-md"
           onClick={() => {
             const data = searchRestaurants(searchText, allRestaurants);
             setFilteredRestaurants(data);
           }}
         ></input>
       </div>
-      <div className="body">
+      <div className="flex flex-wrap">
         {filteredRestaurants.map((restaurant) => {
           return (
             <RestroCard restaurant={restaurant.data} key={restaurant.data.id} />
           );
         })}
       </div>
-    </>
+    </OneContext.Provider>
   );
 };
 
