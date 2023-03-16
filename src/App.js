@@ -10,14 +10,17 @@ import Contact from "./Components/Contact";
 import RestaurantPage from "./Components/RestaurantPage";
 import Kartik from "./Components/Kartik";
 import Profile from "./Components/Profile";
+import Cart from "./Components/Cart";
+import { Provider } from "react-redux";
+import store from "./Utils/Store/store";
 
 const AppLayout = () => {
   return (
-    <>
+    <Provider store={store}>
       <Header />
       <Outlet />
       <Footer />
-    </>
+    </Provider>
   );
 };
 
@@ -52,6 +55,10 @@ const router = createBrowserRouter([
       {
         path: "/profile",
         element: <Profile />,
+      },
+      {
+        path: "/cart",
+        element: <Cart />,
       },
     ],
   },
